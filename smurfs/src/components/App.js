@@ -4,11 +4,16 @@ import "./App.css";
 import SmurfForm from "./SmurfForm";
 import SmurfList from "./SmurfList";
 
+import { connect } from "react-redux";
+import { addSmurf } from "../actions/index";
+import {  removeSmurf } from "../actions/index";
 
 
-const App = () => {
+const App = (props) => {
 
   const [newElement, setNewElement] = useState("");
+
+  const {addSmurf, removeSmurf, state} = props;
 
   const handleChanges = e => {
     setNewElement(e.target.value);
@@ -36,4 +41,8 @@ const App = () => {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {state};
+}
+
+export default connect(mapStateToProps, {addSmurf, removeSmurf})(App);
