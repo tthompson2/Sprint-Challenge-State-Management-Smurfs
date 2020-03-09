@@ -1,21 +1,33 @@
 import React from 'react';
-import Smurf from './Smurf';
+import { connect } from "react-redux";
+import { RetrieveInformation } from "../actions/index";
 
-// return <Smurf item={element.item} completed={element.completed} id={element.id} toggleRemover={props.toggleRemover} />
+const SmurfList = ({ RetrieveInformation, smurf, isFetching, error }) => {
 
-const SmurfList = props => {
+    console.log(smurf)
 
-    console.log(props.state); 
+    if (isFetching) {
+        return <h2> Fetching a smurf now</h2>;
+    }
+
+    if (error) {
+        return <h2>{error}</h2>;
+    }
 
     return (
         <div>
-         {props.state.todos.map(element => { 
-         return <Smurf item={element.item} completed={element.completed} id={element.id}/>
-         })}   
-        
+            <h2>Smurf: {smurf}</h2>
+            <button onClick={RetrieveInformation}>Print Smurf</button>
         </div>
-    )
+    );
+};
 
+const mapStateToProps = state => {
+    return {
+        smurf: state.smurf,
+        isFetching: state.isFetching,
+        error: state.error
+    };
 }
 
-export default SmurfList;
+    export default connect(mapStateToProps, { RetrieveInformation })(SmurfList);
