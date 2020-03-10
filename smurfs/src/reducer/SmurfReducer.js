@@ -22,13 +22,14 @@ const SmurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                smurf: [...state.smurf, "bread"]
+                smurf: [...state.smurf, action.payload]
                 // smurf: action.payload
             }
         case "ADD_SMURF": 
+             
             return {
                 ...state,
-                smurf: [...state.smurf, action.payload]
+                // smurf: [...state.smurf, action.payload]
             }
         case "REMOVE_SMURF":
             return {

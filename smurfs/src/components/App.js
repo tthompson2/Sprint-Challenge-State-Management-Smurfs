@@ -6,7 +6,7 @@ import SmurfList from "./SmurfList";
 
 import { connect } from "react-redux";
 import { addSmurf } from "../actions/index";
-import {  removeSmurf } from "../actions/index";
+import { removeSmurf } from "../actions/index";
 
 
 const App = (props) => {
@@ -31,7 +31,8 @@ const App = (props) => {
       <div>
         <SmurfForm
           newElement={newElement}
-          handleChanges={handleChanges} />
+          addSmurf={addSmurf}
+          removeSmurf={removeSmurf} />
       </div>
       <br/>
       <div>
