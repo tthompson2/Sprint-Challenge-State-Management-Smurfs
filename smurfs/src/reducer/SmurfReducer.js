@@ -6,9 +6,8 @@ const initialState = {
     error: ""
 }
 
-
 const SmurfReducer = (state = initialState, action) => {
-    
+
     console.log("wholeReducer", state, action);
 
     switch (action.type) {
@@ -23,13 +22,11 @@ const SmurfReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 smurf: JSON.stringify(action.payload)
-                // smurf: action.payload
             }
-        case "ADD_SMURF": 
-             
+        case "ADD_SMURF":
+
             return {
                 ...state,
-                // smurf: [...state.smurf, action.payload]
             }
         case "REMOVE_SMURF":
             return {

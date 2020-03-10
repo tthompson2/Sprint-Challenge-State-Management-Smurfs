@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import { addSmurf } from "../actions/index";
 import { removeSmurf } from "../actions/index";
 
-
 const App = (props) => {
 
   const [newElement, setNewElement] = useState("");
@@ -25,9 +24,6 @@ const App = (props) => {
       <div>Welcome to your state management version of Smurfs!</div>
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
-      {/* <div>
-        <RetrieveInformation/>
-      </div> */}
       <div>
         <SmurfForm
           newElement={newElement}
