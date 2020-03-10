@@ -22,7 +22,7 @@ const SmurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                smurf: [...state.smurf, action.payload]
+                smurf: JSON.stringify(action.payload)
                 // smurf: action.payload
             }
         case "ADD_SMURF": 

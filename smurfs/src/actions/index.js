@@ -33,8 +33,8 @@ export const addSmurf = (feature1, feature2, feature3) => dispatch => {
 
     let features = {
         name: feature1,
-        age: feature2,
-        height: feature3
+        age: feature2 + Date.now()-100,
+        height: feature3 + Math.random()+25
     }    
 
     console.log(features);
